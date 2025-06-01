@@ -22,7 +22,7 @@ const bloodStrikePassOptions = [
 // Data info game
 const bloodStrikeGameInfo = {
   name: "Blood Strike",
-  image: "/Blood strike.png",
+  image: "/Bs.png",
   desc: "Top up Gold dan Pass Blood Strike untuk upgrade akun, skin, dan item in-game lainnya. Harga terbaik & proses instan di tzbronzstore.id.",
 };
 
