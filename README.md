@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tzbronzstore.id
 
-## Getting Started
+Tzbronzstore.id adalah web aplikasi top up game, voucher, pulsa, dan listrik dengan harga murah, proses cepat, dan sistem konfirmasi otomatis. Dibangun menggunakan [Next.js](https://nextjs.org) dan MongoDB.
 
-First, run the development server:
+## Fitur Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Top Up Game**: Mobile Legends, Free Fire, PUBG, Genshin Impact, Valorant, Honkai, dan banyak lagi.
+- **Voucher Digital**: Steam Wallet, PlayStation, Discord Nitro, Nintendo eShop, dll.
+- **Pulsa & Listrik**: Isi ulang pulsa operator dan token PLN.
+- **Checkout Otomatis**: Pilih produk, metode pembayaran, dan langsung terhubung ke WhatsApp admin.
+- **Admin Dashboard**: Konfirmasi & hapus pesanan, monitoring transaksi real-time.
+- **Login/Register User**: Sistem autentikasi sederhana berbasis username & password.
+- **Responsive Design**: Tampilan mobile & desktop.
+- **Bubble WhatsApp**: Tombol chat CS di kanan bawah.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalasi & Menjalankan
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Clone repo ini**
+   ```bash
+   git clone https://github.com/username/tzbronzstore.git
+   cd tzbronzstore
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install dependencies**
+   ```bash
+   npm install
+   # atau
+   yarn install
+   ```
 
-## Learn More
+3. **Konfigurasi environment**
+   - Buat file `.env.local` dan isi dengan:
+     ```
+     MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/dbname
+     ```
+   - (Opsional) Tambahkan konfigurasi lain sesuai kebutuhan.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Jalankan development server**
+   ```bash
+   npm run dev
+   # atau
+   yarn dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Buka di browser**
+   ```
+   http://localhost:3000
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Struktur Fitur
 
-## Deploy on Vercel
+- `app/page.js` — Halaman utama & filter produk.
+- `app/product/game/[slug]/page.js` — Halaman detail & checkout produk game.
+- `app/product/voucher/[slug]/page.js` — Halaman detail voucher.
+- `app/product/pulsa/[slug]/page.js` — Halaman pulsa/listrik.
+- `app/admin/page.js` — Dashboard admin (konfirmasi & hapus pesanan).
+- `app/api/orders/route.js` — API pesanan (POST, GET, PATCH, DELETE).
+- `app/login/page.js` — Login & register user.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Teknologi
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js App Router](https://nextjs.org/docs/app)
+- [MongoDB](https://www.mongodb.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [SweetAlert2](https://sweetalert2.github.io/) (konfirmasi admin)
+- [WhatsApp API](https://wa.me/) (checkout & CS)
+
+## Kontribusi
+
+Pull request & issue sangat diterima!  
+Silakan fork, buat branch, dan ajukan PR.
+
+## Lisensi
+
+MIT
+
+---
+
+> Tzbronzstore.id — Solusi top up game, voucher, pulsa, dan listrik terpercaya!
