@@ -19,7 +19,7 @@ const deltaForceProductOptions = [
 // Data info game
 const deltaForceGameInfo = {
   name: "Delta Force Garena",
-  image: "/Df.png",
+  image: "/DeltaForce.png",
   desc: "Top up Delta Force Garena Points untuk membeli item, skin, dan keperluan in-game lainnya dengan harga terbaik dan proses instan di tzbronzstore.id.",
 };
 
