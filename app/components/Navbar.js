@@ -176,13 +176,6 @@ export default function Navbar() {
           >
             <ClockIcon className="h-5 w-5" /> Riwayat
           </Link>
-          <Link
-            href="/pengaturan"
-            className="flex items-center gap-2 py-2 text-purple-700 font-semibold hover:bg-purple-50 rounded transition"
-            onClick={() => setMenuOpen(false)}
-          >
-            <Cog6ToothIcon className="h-5 w-5" /> Pengaturan
-          </Link>
           {/* Tampilkan Dashboard jika admin */}
           {user?.role === "admin" && (
             <Link
