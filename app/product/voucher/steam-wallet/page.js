@@ -16,7 +16,7 @@ const steamWalletOptions = [
 // Data info Steam Wallet
 const steamWalletInfo = {
   name: "Steam Wallet",
-  image: "/voucher/Steam.png",
+  image: "/voucher/ST.jpg",
   desc: "Voucher Steam Wallet untuk pembelian game, item, dan konten digital di Steam. Pilih nominal voucher sesuai kebutuhan, harga murah & proses instan.",
 };
 
