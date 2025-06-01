@@ -50,18 +50,20 @@ export default function LoginComponent({ onAuth }) {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
+  // ...existing code...
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMsg("");
-    // ...validasi...
     setLoading(true);
+
+    // ...existing code...
     if (isLogin) {
+      // ...login seperti sebelumnya...
       const res = await loginUser(form);
       if (res.success) {
         setUser(res.user);
         localStorage.setItem("user", JSON.stringify(res.user));
         if (onAuth) onAuth(res.user);
-        // Trigger update di tab lain
         window.dispatchEvent(new Event("storage"));
         if (res.user.role === "admin") {
           router.replace("/admin");
@@ -72,10 +74,30 @@ export default function LoginComponent({ onAuth }) {
         setMsg(res.error || "Login gagal");
       }
     } else {
-      // ...register...
+      // Validasi password & konfirmasi password
+      if (form.password !== form.confirmPassword) {
+        setMsg("Konfirmasi password tidak cocok.");
+        setLoading(false);
+        return;
+      }
+      if (form.password.length < 8) {
+        setMsg("Password minimal 8 karakter.");
+        setLoading(false);
+        return;
+      }
+      // Proses register
+      const res = await registerUser(form);
+      if (res.success) {
+        setMsg("Berhasil daftar! Silakan login.");
+        setIsLogin(true); // Pindah ke form login
+        setForm({ username: "", password: "", confirmPassword: "" });
+      } else {
+        setMsg(res.error || "Registrasi gagal");
+      }
     }
     setLoading(false);
   };
+
 
   const handleLogout = () => {
     setUser(null);
